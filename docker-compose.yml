@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: cross-view-weather
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
+    ports:
+    - "8080:8080"
+    command: /bin/bash
+    environment:
+      - PYTHONUNBUFFERED=1
