@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR /app
+WORKDIR /fast_api
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \

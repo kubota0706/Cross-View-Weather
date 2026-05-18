@@ -1,11 +1,11 @@
 services:
-  app:
+  fastapi:
     build: .
     container_name: cross-view-weather
     tty: true
     stdin_open: true
     volumes:
-      - .:/app
+      - ./fast_api:/fast_apoi
     ports:
     - "8080:8080"
     command: /bin/bash
