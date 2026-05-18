@@ -7,7 +7,7 @@ services:
     volumes:
       - ./fast_api:/fast_apoi
     ports:
-    - "8080:8080"
+    - "127.0.0.1:8080:8080"
     command: /bin/bash
     environment:
       - PYTHONUNBUFFERED=1
