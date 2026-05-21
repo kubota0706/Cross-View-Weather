@@ -39,7 +39,6 @@ except json.JSONDecodeError:
     exit()
 
 for location_id, info in data.items():
-    img_name = f"{location_id}.jpg"
 
     url_suffix = info['url_suffix']
 
@@ -59,7 +58,7 @@ for location_id, info in data.items():
 
                 target_datetime = formatted_date + formattad_hour + formattad_minutes   #日時分からフォーマット済文字列を作成
 
-                file_path = f'{save_dir}/{info["area"]}/{target_datetime}{img_name}'   #保存先パス
+                file_path = f'{save_dir}/{info["area"]}/{location_id}-{target_datetime}.jpg'   #保存先パス
 
                 # ファイルの存在チェック
                 if os.path.exists(file_path):
