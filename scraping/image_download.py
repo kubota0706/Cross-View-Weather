@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 #==========================
 
 #--------- フォルダ関連 -------------
-save_dir = "images"     #画像保存用フォルダパス
+save_dir = "../data/images"     #画像保存用フォルダパス
 os.makedirs(save_dir, exist_ok=True)    # 画像保存用フォルダ作成
 json_path = './scraping_config.json'    # JSON読み込み用パス
 download_error_log_path = f'{save_dir}/download_error.log'  #エラーログ記録用パス
