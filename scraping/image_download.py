@@ -50,7 +50,7 @@ except json.JSONDecodeError:
 #--------------------------------------------------
 # 進捗保存・読み込み機能
 #--------------------------------------------------
-def save_progress(location_id, day, hour, minutes, status="running", error_msg=None):
+def save_progress(location_id=None, day=None, hour=None, minutes=None, status="running", error_msg=None):
     progress = {
         "location_id": location_id,
         "day": day,
@@ -146,9 +146,8 @@ try:
                         time.sleep(1.5)
 
     # 全て正常終了したら進捗ファイルを削除
-        if os.path.exists(progress_json_path):
-            os.remove(progress_json_path)
-        print("【完了】すべてのスクレイピングタスクが正常に終了しました。")
+    save_progress(location_id, day, hour, minutes, status="ended")
+    print("【完了】すべてのスクレイピングタスクが正常に終了しました。")
 
 except KeyboardInterrupt:
     print("\n[ユーザー中断] 状態を記録して終了します。")
