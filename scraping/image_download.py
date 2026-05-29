@@ -24,10 +24,10 @@ headers = {
 
 # --------- スクレイピング関連 ---------
 # 開始日時設定
-end_date_str = "20260514"
+end_date_str = "20260525"
 end_date = datetime.strptime(end_date_str, "%Y%m%d")
 # 開始日時より何日遡るか
-duration_days = 20  
+duration_days = 12
 start_date = end_date - timedelta(days=duration_days)
 
 # url接頭語
@@ -141,7 +141,7 @@ try:
                             #エラーログを書きコンソールに出力
                             with open(download_error_log_path, mode='a') as f:
                                 f.write(f'\nDownload Error： {url}')
-                                print(f'失敗({response.status_code})： {url}')
+                                print(f'{location_id} 失敗({response.status_code})： {url}')
                         
                         time.sleep(1.5)
 
