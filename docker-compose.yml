@@ -1,14 +1,16 @@
 services:
-  fastapi:
-    build: .
+  python:
+    image: image-scraping-cvw
     container_name: cross-view-weather
+    build: .
     tty: true
     stdin_open: true
+    working_dir: /app
     volumes:
       - ./data:/data
       - ./scraping:/scraping
     ports:
-    - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8080:8080"
     command: /bin/bash
     environment:
       - PYTHONUNBUFFERED=1
