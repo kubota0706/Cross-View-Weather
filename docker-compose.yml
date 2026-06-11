@@ -6,7 +6,7 @@ services:
     stdin_open: true
     volumes:
       - ./data:/data
-      - ./scraping:/dcraping
+      - ./scraping:/scraping
     ports:
     - "127.0.0.1:8080:8080"
     command: /bin/bash
