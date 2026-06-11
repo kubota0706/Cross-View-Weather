@@ -7,8 +7,8 @@ services:
     stdin_open: true
     working_dir: /app
     volumes:
-      - ./scraping:/app
       - ./data:/data
+      - ./scraping:/scraping
     ports:
       - "127.0.0.1:8080:8080"
     command: /bin/bash
